@@ -1,13 +1,285 @@
 @import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
-
-h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
+body {
+	font-family: verdana;
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+h1 {
+	font-size: 36px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	text-decoration: underline;
+	font-family: serif;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+
+	padding-bottom: 10px;
+	font-family: serif;
+}
+
+/* Navigation */
+.nav {
+	position: fixed;
+	width: 100%;
+	background-color: $white;
+	height: 50px;
+	box-shadow: 1px 1px 0.5px #888888;
+	z-index: 9999;
+}
+
+.nav ul {
+	font-size: 22px;
+	color: $black;
+}
+
+.nav ul li {
+	display: inline-block;
+	padding: 14px;
+}
+
+#teemo {
+	color: $black;
+    text-shadow:
+    -1px -1px 0 $viridian,
+    1px -1px 0 $viridian,
+    -1px 1px 0 $viridian,
+    1px 1px 0 $viridian;
+}
+
+#stats-header {
+	color: $viridian;
+	font-weight: bold;
+}
+
+.nav a {
+	color: $black;
+	text-decoration: none;
+}
+
+#teemo-icon {
+	height: auto;
+	width: 16px;
+}
+
+/* Content */
+.home {
+	background-image: url('../media/teemo_bg.jpg');
+	height: 715px;
+}
+.bg {
+	background-image: url('../media/teemo_bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 300px;
+}
+.stripe-odd {
+	background-color: $viridian;
+	height: 800px;
+}
+
+.stripe-even {
+	background-color: $white;
+	height: 800px;
+}
+
+#tweets {
+	position: absolute;
+	top: 100px;
+	margin-left: 20px;
+}
+
+#tweets h4 {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+#social {
+	position: absolute;
+	left: 20px;
+	top: 530px;
+}
+#social img {
+	width: 50px;
+	height: auto;
+}
+
+#stats img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gallery-content {
+	width: 1150px;
+	height: 424px;
+	margin: 0 auto;
+}
+
+.gallery-content .carousel, .gallery-content .video {
+	float: left;
+	margin: 10px;
+}
+
+#gallery p, #stats p {
+	text-align: center;
+	font-style: italic;
+}
+
+#animation {
+	width: 200px;
+	height: auto;
+	position: relative;
+	-webkit-animation-name: example;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-iteration-count: 3;
+	animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {right:800px; top:0px;}
+    25%  {left:600px; top:0px;}
+    50%  {left:400px; top:0px;}
+    75%  {left:200px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {left:850px; top:0px;}
+    25%  {left:650px; top:0px;}
+    50%  {left:450px; top:0px;}
+    75%  {left:250px; top:0px;}
+    100% {left:50px; top:0px;}
+}
+
+.carousel {
+	width: 500px;
+	position: relative;
+	overflow: hidden;
+
+	border-style: solid;
+	border-width: 1px;
+}
+
+.carousel ol {
+	
+	margin: 0px;
+	padding: 0px;
+}
+
+.carousel li {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.carousel li img {
+	width: 98%;
+	height: auto;
+}
+
+.active {
+	height: 400px;
+}
+
+.active li {
+	position: absolute;
+	top: 600px;
+}
+
+.active li.current {
+	top: 50px;
+}
+
+.controls button {
+	position: absolute;
+	height: 500px;
+	width: 100px;
+	z-index: 9999;
+	font-size: 64px;
+	opacity: 0.2;
+}
+
+.prev:hover {
+	opacity: 0.5;
+}
+
+.next:hover {
+	opacity: 0.5;
+}
+
+.next {
+	right: 0px;
+}
+
+.background{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+}
+.lore-content {
+	width: 60%;
+	float: left;
+	padding: 0 5px;
+
+	border-right-style: solid;
+	border-width: 1px;
+}
+
+.quotes {
+	width: 35%;
+	float: left;
+	padding-left: 20px;
+}
+
+.quotes ul {
+	list-style-type: circle;
+	padding-left: 40px;
+}
+
+.quotes li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#stats {
+	height: 2000px;
+}
+
+/* Footer */
+.footer {
+	position: relative;
+	background-color: $white;
+	height: 100px;
+	color: $black;
+	font-size: 16px;
+	text-align: center;
+}
+
+.footer p {
+	position: absolute;
+	top: 50%;
+	padding-left: 2%;
+	padding-right: 2%;
+	margin: 0 auto;
+	margin-top: -25px;
+}
+
+.footer ul li {
+	padding: 14px;
 }
