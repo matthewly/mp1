@@ -26,7 +26,7 @@ $(document).scroll(function() {
 		$('#lore-header').css('color', '#000000');
 		$('#lore-header').css('font-weight', 'normal');
 
-		$('.bg').css('background-image', 'url(\'../media/teemo_bg3.jpg\')');
+		$('.bg').css('background-image', 'url(\'./media/teemo_bg3.jpg\')');
 	}
 	/* Gallery */
 	else if (nav_bottom > div2_top && nav_bottom < div3_top) {
@@ -39,7 +39,7 @@ $(document).scroll(function() {
 		$('#lore-header').css('color', '#000000');
 		$('#lore-header').css('font-weight', 'normal');
 
-		$('.bg').css('background-image', 'url(\'../media/teemo_bg2.jpg\')');
+		$('.bg').css('background-image', 'url(\'./media/teemo_bg2.jpg\')');
 	}
 	/* Lore */
 	else {
