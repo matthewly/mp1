@@ -1,27 +1,5 @@
-var divs = document.getElementsByTagName('div');
-for(var i=0; i<divs.length; i++) {
-  divs[i].addEventListener("click", highlightThis);
-  /*
-  divs[i].addEventListener("click", highlightThis, true);
-  divs[i].addEventListener("click", highlightThis, false);*/
-}
 
-function highlightThis(event) {
-    //event.stopPropagation();
 
-    var backgroundColor = this.style.backgroundColor;
-    this.style.backgroundColor='yellow';
-    //alert(this.className);
-    this.style.backgroundColor=backgroundColor;
-}
-
-/* Smooth scrolling */
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
-});
 
 $(document).scroll(function() {
 	/* Navbar highlighting */
@@ -87,44 +65,60 @@ $(document).scroll(function() {
 	}
 });
 
+/* Smooth scrolling */
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+});
+
 /* Carousel */
 carousel = (function(){
   var container = $('.carousel')[0];
   var next = $('.next')[0];
   var prev = $('.prev')[0];
-  var items = $('.content li');
+  var skins = $('.content li');
   var counter = 0;
-  var amount = items.length;
-  var current = items[0];
-  container.classList.add('active');
   
   /* starting item */
-  current = items[counter];
-  current.classList.add('current');
-
-  /* next button */
-  next.addEventListener('click', function(ev) {
-    current.classList.remove('current');
-    counter = counter + 1;
-    if (!items[counter]) { 
-      counter = 0;
-    }
-    current = items[counter];
-    current.classList.add('current');
-  });
+  container.classList.add('active');
+  skins[0].classList.add('current');
 
   /* previous button */
-  prev.addEventListener('click', function(ev) {
-    current.classList.remove('current');
+  prev.addEventListener('click', function() {
+    skins[counter].classList.remove('current');
     counter = counter + -1;
     if (counter < 0) { 
-      counter = amount - 1; 
+      counter = skins.length - 1; 
     }
-    current = items[counter];
-    current.classList.add('current');
+    skins[counter].classList.add('current');
   });
+
+  /* next button */
+  next.addEventListener('click', function() {
+    skins[counter].classList.remove('current');
+    counter = counter + 1;
+    if (!skins[counter]) { 
+      counter = 0;
+    }
+    skins[counter].classList.add('current');
+  }); 
   
 })();
+
+/* Modal */
+$('#pictures').click(function() {
+	$('.modal').css('display', 'inline');
+	$('.overlay').css('display', 'inline');
+});
+
+/* Modal close to stay at same spot */
+$('#close').click(function(e) {
+	e.preventDefault();
+	$('.modal').css('display', 'none');
+	$('.overlay').css('display', 'none');
+});
 
 
 
